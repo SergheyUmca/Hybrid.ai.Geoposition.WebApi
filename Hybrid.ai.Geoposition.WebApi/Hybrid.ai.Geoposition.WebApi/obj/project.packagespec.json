@@ -18,7 +18,14 @@
     },
     "frameworks": {
       "netcoreapp2.2": {
-        "projectReferences": {}
+        "projectReferences": {
+          "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\Hybrid.ai.Geoposition.BLL.csproj": {
+            "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\Hybrid.ai.Geoposition.BLL.csproj"
+          },
+          "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj": {
+            "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

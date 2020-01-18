@@ -4,8 +4,4 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Hybrid.ai.Geoposition.Common\Hybrid.ai.Geoposition.Common.csproj" />
-    </ItemGroup>
-
 </Project>

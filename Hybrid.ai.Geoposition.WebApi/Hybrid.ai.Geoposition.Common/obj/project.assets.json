@@ -207,16 +207,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "Hybrid.ai.Geoposition.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "compile": {
-          "bin/placeholder/Hybrid.ai.Geoposition.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Hybrid.ai.Geoposition.Common.dll": {}
-        }
       }
     }
   },
@@ -690,16 +680,10 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "Hybrid.ai.Geoposition.Common/1.0.0": {
-      "type": "project",
-      "path": "../Hybrid.ai.Geoposition.Common/Hybrid.ai.Geoposition.Common.csproj",
-      "msbuildProject": "../Hybrid.ai.Geoposition.Common/Hybrid.ai.Geoposition.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "Hybrid.ai.Geoposition.Common >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
@@ -710,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\Hybrid.ai.Geoposition.BLL.csproj",
-      "projectName": "Hybrid.ai.Geoposition.BLL",
-      "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\Hybrid.ai.Geoposition.BLL.csproj",
+      "projectUniqueName": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj",
+      "projectName": "Hybrid.ai.Geoposition.Common",
+      "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\obj\\",
+      "outputPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -732,11 +716,7 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {
-            "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj": {
-              "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

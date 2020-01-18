@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\Hybrid.ai.Geoposition.BLL.csproj",
-    "projectName": "Hybrid.ai.Geoposition.BLL",
-    "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\Hybrid.ai.Geoposition.BLL.csproj",
-    "outputPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.BLL\\obj\\",
+    "projectUniqueName": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj",
+    "projectName": "Hybrid.ai.Geoposition.Common",
+    "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj",
+    "outputPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -18,11 +18,7 @@
     },
     "frameworks": {
       "netcoreapp2.2": {
-        "projectReferences": {
-          "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj": {
-            "projectPath": "C:\\Home\\TestsTasks\\Hybrid.Ai.WebApi\\Hybrid.ai.Geoposition.WebApi\\Hybrid.ai.Geoposition.Common\\Hybrid.ai.Geoposition.Common.csproj"
-          }
-        }
+        "projectReferences": {}
       }
     },
     "warningProperties": {
