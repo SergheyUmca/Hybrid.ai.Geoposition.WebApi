@@ -63,6 +63,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="BaseController.cs" t="Include" />
+          <e p="GeoInformationController.cs" t="Include" />
         </e>
         <e p="Hybrid.ai.Geoposition.WebApi.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
