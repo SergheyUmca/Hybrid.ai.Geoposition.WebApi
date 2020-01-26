@@ -6,6 +6,11 @@
 
     <ItemGroup>
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.0" />
+      <PackageReference Include="ObjectCloner.Extensions" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hybrid.ai.Geoposition.Common\Hybrid.ai.Geoposition.Common.csproj" />
     </ItemGroup>
 
 </Project>
