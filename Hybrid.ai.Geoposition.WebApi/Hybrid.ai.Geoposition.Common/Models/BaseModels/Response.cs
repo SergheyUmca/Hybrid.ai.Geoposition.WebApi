@@ -2,12 +2,12 @@
 
 namespace Hybrid.ai.Geoposition.Common.Models.BaseModels
 {
-    public class Response
-    {
-        public class CustomErrors
+    public class CustomErrors
 	{
 		public ResponseCodes ResponseCode { get; set; }
+
 		public string ResultMessage { get; set; }
+
 		public int? BatchId { get; set; }
 	}
 
@@ -25,11 +25,10 @@ namespace Hybrid.ai.Geoposition.Common.Models.BaseModels
 		public class Response<T> : Response
 		{
 			public Response()
-			{
-				
-			}
+			{}
 			
-	        public Response( T data) => Data = data;
+	        public Response(T data) => Data = data;
+
 	        public T Data { get; set; }
         }
 
@@ -37,7 +36,7 @@ namespace Hybrid.ai.Geoposition.Common.Models.BaseModels
 		{
 			public ErrorResponse(string errorMessage, ResponseCodes responseCode = ResponseCodes.TECHNICAL_ERROR)
 			{
-				ResultCode = ResponseCodes.FAILURE;
+				ResultCode = responseCode;
 
 				if (Errors == null)
 					Errors = new List<CustomErrors>();
@@ -63,7 +62,7 @@ namespace Hybrid.ai.Geoposition.Common.Models.BaseModels
 		{
 			public ErrorResponse(string errorMessage, ResponseCodes responseCode = ResponseCodes.TECHNICAL_ERROR)
 			{
-				ResultCode = ResponseCodes.FAILURE;
+				ResultCode = responseCode;
 				if (Errors == null)
 					Errors = new List<CustomErrors>();
 
@@ -83,27 +82,5 @@ namespace Hybrid.ai.Geoposition.Common.Models.BaseModels
 				Errors.AddRange(errors);
 			}
 		}
-
-		public class BatchedErrorResponse<T> : ErrorResponse
-		{
-			public List<T> Data { get; set; }
-
-			public BatchedErrorResponse(ResponseCodes responseCode, string errorMessage, IEnumerable<T> data) : base(errorMessage, responseCode)
-			{
-				if (Data == null)
-					Data = new List<T>();
-
-				Data.AddRange(data);
-			}
-
-			public BatchedErrorResponse(IEnumerable<CustomErrors> errors, IEnumerable<T> data) : base(errors)
-			{
-				if (Data == null)
-                    Data = new List<T>();
-
-				Data.AddRange(data);
-			}
-		}	
 	}
-    }
 }

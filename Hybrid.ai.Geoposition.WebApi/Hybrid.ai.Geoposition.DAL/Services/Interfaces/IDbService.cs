@@ -8,6 +8,6 @@ namespace Hybrid.ai.Geoposition.DAL.Services.Interfaces
     {
         DbService DbServiceInstance { get; }
         
-        IGeoLite GeoLite { get; }
+        IGeoLiteRepository GeoLite { get; }
     }
 }

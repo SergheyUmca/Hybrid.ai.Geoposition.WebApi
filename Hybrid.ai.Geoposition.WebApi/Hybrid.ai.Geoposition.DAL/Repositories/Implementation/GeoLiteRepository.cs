@@ -9,21 +9,21 @@ using Hybrid.ai.Geoposition.DAL.Entities;
 using Hybrid.ai.Geoposition.DAL.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using ObjectCloner.Extensions;
-using static Hybrid.ai.Geoposition.Common.Models.BaseModels.Response.AppResponse;
-using Response = Hybrid.ai.Geoposition.Common.Models.BaseModels.Response;
+using static Hybrid.ai.Geoposition.Common.Models.BaseModels.AppResponse;
 
 namespace Hybrid.ai.Geoposition.DAL.Repositories.Implementation
 {
-    public class GeoLite : IGeoLite
+    public class GeoLiteRepository : IGeoLiteRepository
     {
         private readonly BaseContext _db;
         
-        public GeoLite(BaseContext context)
+        public GeoLiteRepository(BaseContext context)
         {
             _db = context;
             
         }
         
+        public async Task<Response<>
         
         //Todo add search by network
         public async Task<Response<IpV4GeoLiteInformationEntity>> Get(string md5Hash, string network)
@@ -41,11 +41,13 @@ namespace Hybrid.ai.Geoposition.DAL.Repositories.Implementation
                     }).AsNoTracking().FirstOrDefaultAsync();
 
                 return result != null ? new Response<IpV4GeoLiteInformationEntity>(result.ShallowClone()) 
-                    : new ErrorResponse<IpV4GeoLiteInformationEntity>(ErrorMessages.NullSequenceErrorMessage, ResponseCodes.NOT_FOUND_RECORDS);
+                    : new ErrorResponse<IpV4GeoLiteInformationEntity>(ErrorMessages.NullSequenceErrorMessage,
+                        ResponseCodes.NOT_FOUND_RECORDS);
             }
             catch (CustomException e)
             {
-                return new ErrorResponse<IpV4GeoLiteInformationEntity>(e.Errors.FirstOrDefault()?.ResultMessage, ResponseCodes.DATABASE_ERROR);
+                return new ErrorResponse<IpV4GeoLiteInformationEntity>(e.Errors.FirstOrDefault()?.ResultMessage,
+                    ResponseCodes.DATABASE_ERROR);
             }
             catch (Exception e)
             {
@@ -75,16 +77,19 @@ namespace Hybrid.ai.Geoposition.DAL.Repositories.Implementation
                     }).ToListAsync();
 
                 return result != null ? new Response<List<IpV4GeoLiteInformationEntity>>(result.ShallowClone()) 
-                    : new ErrorResponse<List<IpV4GeoLiteInformationEntity>>(ErrorMessages.NullSequenceErrorMessage, ResponseCodes.NOT_FOUND_RECORDS);
+                    : new ErrorResponse<List<IpV4GeoLiteInformationEntity>>(ErrorMessages.NullSequenceErrorMessage,
+                        ResponseCodes.NOT_FOUND_RECORDS);
             }
             catch (CustomException e)
             {
-                return new ErrorResponse<List<IpV4GeoLiteInformationEntity>>(e.Errors.FirstOrDefault()?.ResultMessage, ResponseCodes.DATABASE_ERROR);
+                return new ErrorResponse<List<IpV4GeoLiteInformationEntity>>(e.Errors.FirstOrDefault()?.ResultMessage,
+                    ResponseCodes.DATABASE_ERROR);
             }
             catch (Exception e)
             {
                 var exceptionMessage = e.InnerException != null ? e.InnerException.Message : e.Message;
-                return new ErrorResponse<List<IpV4GeoLiteInformationEntity>>(exceptionMessage, ResponseCodes.DATABASE_ERROR);
+                return new ErrorResponse<List<IpV4GeoLiteInformationEntity>>(exceptionMessage,
+                    ResponseCodes.DATABASE_ERROR);
             }
         }
         
@@ -147,22 +152,24 @@ namespace Hybrid.ai.Geoposition.DAL.Repositories.Implementation
             catch (Exception e)
             {
                 var exceptionMessage = e.InnerException != null ? e.InnerException.Message : e.Message;
-                return new ErrorResponse<Dictionary<Guid, IpV4GeoLiteInformationEntity>>(exceptionMessage, ResponseCodes.DATABASE_ERROR);
+                return new ErrorResponse<Dictionary<Guid, IpV4GeoLiteInformationEntity>>(exceptionMessage,
+                    ResponseCodes.DATABASE_ERROR);
             }
         }
 
-        public async Task<Response.AppResponse.Response> Update(IpV4GeoLiteInformationEntity entity)
+        public async Task<Response> Update(IpV4GeoLiteInformationEntity entity)
         {
             try
             {
                 var entityToDb = entity.ShallowClone();
-                var local = _db.Set<IpV4GeoLiteInformationEntity>().Local.FirstOrDefault(d => d.Key.Equals(entityToDb.Key));
+                var local = _db.Set<IpV4GeoLiteInformationEntity>().Local
+                    .FirstOrDefault(d => d.Key.Equals(entityToDb.Key));
                 if (local != null)
                     _db.Entry(local).State = EntityState.Detached;
               
                 _db.Entry(entityToDb).State = EntityState.Modified;
                 await _db.SaveChangesAsync();
-                return new Response.AppResponse.Response();
+                return new Response();
             }
             catch (Exception e)
             {

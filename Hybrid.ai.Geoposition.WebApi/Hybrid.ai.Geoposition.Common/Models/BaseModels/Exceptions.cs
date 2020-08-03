@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using static Hybrid.ai.Geoposition.Common.Models.BaseModels.Response;
 
 namespace Hybrid.ai.Geoposition.Common.Models.BaseModels
 {
@@ -24,6 +23,7 @@ namespace Hybrid.ai.Geoposition.Common.Models.BaseModels
         {
             if (Errors == null)
                 Errors = new List<CustomErrors>();
+            
             Errors.AddRange(errors);
         }
     }

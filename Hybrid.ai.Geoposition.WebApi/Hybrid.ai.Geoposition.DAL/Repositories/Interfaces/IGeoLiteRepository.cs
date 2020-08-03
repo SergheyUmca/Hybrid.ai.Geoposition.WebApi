@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Hybrid.ai.Geoposition.DAL.Entities;
-using static Hybrid.ai.Geoposition.Common.Models.BaseModels.Response.AppResponse;
+using static Hybrid.ai.Geoposition.Common.Models.BaseModels.AppResponse;
 
 namespace Hybrid.ai.Geoposition.DAL.Repositories.Interfaces
 {
-    public interface IGeoLite
+    public interface IGeoLiteRepository
     {
         Task<Response<IpV4GeoLiteInformationEntity>> Get(string md5Hash, string network);
         
